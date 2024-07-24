@@ -3,7 +3,7 @@ export type ExportImageType = 'jpeg' | 'png';
 export interface Point {
   readonly x: number;
   readonly y: number;
-  readonly isL: boolean;
+  readonly isL?: boolean;
 }
 
 export interface CanvasPath {
