@@ -128,7 +128,9 @@ export const bezierCommand = (point: Point, i: number, a: Point[]): string => {
     reverse: true,
   });
 
-  return `C ${cpsX},${cpsY} ${cpeX},${cpeY} ${point.x}, ${point.y}`;
+  return point.isL
+    ? `L ${cpsX},${cpsY} ${cpeX},${cpeY} ${point.x}, ${point.y}`
+    : `C ${cpsX},${cpsY} ${cpeX},${cpeY} ${point.x}, ${point.y}`;
 };
 
 type PathProps = {
