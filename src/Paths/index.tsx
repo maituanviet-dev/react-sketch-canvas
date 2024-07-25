@@ -129,7 +129,7 @@ export const bezierCommand = (point: Point, i: number, a: Point[]): string => {
   });
 
   return point.isL
-    ? `L ${cpsX},${cpsY} ${cpeX},${cpeY} ${point.x}, ${point.y}`
+    ? `L ${point.x},${point.y}`
     : `C ${cpsX},${cpsY} ${cpeX},${cpeY} ${point.x}, ${point.y}`;
 };
 
