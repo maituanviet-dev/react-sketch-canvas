@@ -41,6 +41,8 @@ export const SvgPath = ({
     );
   }
 
+  const { isL } = paths[0];
+
   const d = paths.reduce(
     (acc, point, i, a) =>
       i === 0 ? `M ${point.x},${point.y}` : `${acc} ${command(point, i, a)}`,
@@ -53,7 +55,7 @@ export const SvgPath = ({
       id={id}
       d={d}
       fill="none"
-      strokeLinecap="round"
+      strokeLinecap={isL ? 'square' : 'round'}
       stroke={strokeColor}
       strokeWidth={strokeWidth}
     />
